@@ -1,42 +1,31 @@
-import user from './user.json';
+import { Profilee, Card, Photo, Text, List, Item } from './Profile.styled';
 
-// {
-//   /* <Profile
-//   username={user.username}
-//   tag={user.tag}
-//   location={user.location}
-//   avatar={user.avatar}
-//   stats={user.stats}
-// />; */
-// }
-
-export default function Profile(params) {
+export default function Profile({ user }) {
   return (
     <>
-      <div class="profile">
-        <div class="description">
-          <img src={user.avatar} alt="User avatar" class="avatar" />
-          <p class="name">{user.username}</p>
-          <p class="tag">{user.tag}</p>
-          <p class="location">{user.location}</p>
-        </div>
+      <Profilee>
+        <Card>
+          <Photo src={user.avatar} alt="User avatar" />
+          <Text>{user.username}</Text>
+          <Text>{user.tag}</Text>
+          <Text>{user.location}</Text>
+        </Card>
 
-        <ul class="stats">
-          <li>
-            <span class="label">Followers</span>
-            <span class="quantity">{user.stats.followers}</span>
-          </li>
-          <li>
-            <span class="label">Views</span>
-            <span class="quantity">{user.stats.views}</span>
-          </li>
-          <li>
-            <span class="label">Likes</span>
-            <span class="quantity">{user.stats.likes}</span>
-          </li>
-        </ul>
-      </div>
+        <List>
+          <Item>
+            <span>Followers</span>
+            <span>{user.stats.followers}</span>
+          </Item>
+          <Item>
+            <span>Views</span>
+            <span>{user.stats.views}</span>
+          </Item>
+          <Item>
+            <span>Likes</span>
+            <span>{user.stats.likes}</span>
+          </Item>
+        </List>
+      </Profilee>
     </>
   );
 }
-console.log(Profile);
