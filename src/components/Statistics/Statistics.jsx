@@ -1,10 +1,10 @@
-import { List, Container, Item } from './Statistics.styled';
+import { List, Container, Item, Title } from './Statistics.styled';
 
 export default function Statistics({ data }) {
   return (
     <>
       <Container>
-        <h2>Upload stats</h2>
+        <Title>Upload stats</Title>
 
         <List>
           {data.map(item => (
